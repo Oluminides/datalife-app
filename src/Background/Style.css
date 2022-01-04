@@ -1,19 +1,125 @@
-.introStyles {
-    position: 'absolute';
-    top: '10%';
-    left: '12.5%';
-    width: '75%';
-    height: '75%';
-    border: '1px solid white';
-    border-radius: '20px';
-    display: 'flex';
-    flex-direction: 'column';
-    color: 'white';
-    background-color: '#536872';
-    font-family: 'Baskerville';
-    font-size: '35px';
-    font-weight: 'bold';
-    text-align: 'center';
-    letter-spacing: '6px';
-    line-height: '2'
+#paperStyles {
+    min-height: 100vh;
+    background-image: url(../img/bedroom_background.png);
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    filter: blur(6px);
+}
+
+#introStyles {
+    position: absolute;
+    top: 10%;
+    left: 12.5%;
+    width: 75%;
+    height: 75%;
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: #536872;
+    font-family: Baskerville;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 6px;
+    line-height: 2
+}
+
+#buttonStyles {
+    position: absolute;
+    height: 10%;
+    width: 15%;
+    top: 90%;
+    left: 85%;
+    color: #536872;
+    border: 2px solid #536872;
+    border-radius: 10px;
+    background-color: white;
+    font-family: Baskerville;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#buttonStyles:hover {
+    background-color: #536872;
+    color: white;
+}
+
+#questionStyles {
+    width: 50%;
+    top: 10%;
+    left: 25%;
+    height: 8%;
+    position: absolute;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    color: #536872;
+    font-family: Baskerville;
+    font-size: 35px;
+    font-weight: bold;
+    /* typography: subtitle2; */
+    letter-spacing: 6px;
+    line-height: 1.5;
+    flex-direction: column;
+
+}
+
+#dataStyles {
+    width: 33%;
+    /* height: 5%; */
+    top: 0.5%;
+    left: 0%;
+    position: fixed;
+    display: none;
+}
+
+#popStyles {
+    width: 33%;
+    /* height: 5%; */
+    top: 0.5%;
+    left: 67%;
+    position: fixed;
+    transform: rotate(180deg);
+    display: none;
+}
+
+
+#clockStyles {
+    width: 25%;
+    height: 30%;
+    top: 35%;
+    left: 62.5%;
+    border: 1px solid white;
+    position: fixed;
+    border-radius: 10px;
+    background-color: #536872;
+    color: white;
+    font-family: Baskerville;
+    font-size: 35px;
+    font-weight: bold;
+    /* typography: subtitle2; */
+    text-align: center;
+    letter-spacing: 6px;
+    line-height: 1.5
+}
+
+#phoneStyles {
+    width: 25%;
+    height: 30%;
+    top: 35%;
+    left: 12.5%;
+    border: 1px solid white;
+    position: fixed;
+    border-radius: 10px;
+    background-color: #536872;
+    text-align: center;
+    color: white;
+    font-family: Baskerville;
+    font-size: 35px;
+    font-weight: bold;
+    /* typography: subtitle2; */
+    letter-spacing: 6px;
+    line-height: 1.5
 }
