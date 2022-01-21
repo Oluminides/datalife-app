@@ -5,81 +5,77 @@ import img1 from '../img/bedroom_background.png'
 import { Progress } from 'semantic-ui-react'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import reactDom from 'react-dom';
+import IconButton from '@mui/material/IconButton';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import InfoIcon from '@mui/icons-material/Info';
+// import reactDom from 'react-dom';
 
 
  class Background extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            dataBar: 100,
-            popBar: 100,
-            children: [],
-        }
+    state = {
+        dataPercent: 100,
+        popPercent: 100,
+
+        // phoneImage:  "",
+        // clockImage:  "../img/clock.svg",
+    }
+
+    updateChoice()
+    {
 
     }
 
+    dataDecrement = () => {
+        this.setState((prevState) => ({
+            dataPercent: prevState.dataPercent >= 0 ? prevState.dataPercent - 10 : 0,
+            popPercent: prevState.popPercent >= 0 ? prevState.popPercent - 5 : 0,
+        }));
+
+        document.getElementById('phoneStyles').style.display = 'none';
+        document.getElementById('clockStyles').style.display = 'none';
+        document.getElementById('questionStyles').style.display = 'none';
+        document.getElementById('choiceStyles').style.display = 'block';
+        document.getElementById('choiceCardStyles').style.display = 'block';
+        document.getElementById('choiceCardStyles').innerHTML = document.getElementById('phoneStyles').innerHTML;
+        document.getElementById('nextButtonStyles').style.display = 'block';
+    }
+
+    popDecrement = () => {
+        this.setState((prevState) => ({
+            popPercent: prevState.popPercent >= 0 ? prevState.popPercent - 10 : 0,
+            dataPercent: prevState.dataPercent >= 0 ? prevState.dataPercent - 5 : 0
+        }));
+        
+        document.getElementById('phoneStyles').style.display = 'none';
+        document.getElementById('clockStyles').style.display = 'none';
+        document.getElementById('questionStyles').style.display = 'none';
+        document.getElementById('choiceStyles').style.display = 'block';
+        document.getElementById('choiceCardStyles').style.display = 'block';
+        document.getElementById('choiceCardStyles').innerHTML = document.getElementById('clockStyles').innerHTML;
+        document.getElementById('nextButtonStyles').style.display = 'block';
+    }
+    clickContinue()
+    {
+        document.getElementById('phoneStyles').style.display = 'none';
+    }
+
+    clickPhone()
+    {
+        this.dataDecrement();
+        // this.changeHTML();
+    }
+        
+
     render()
     {
-        // const children = [];
-        
-        
-        // alert(this.state.dataBar);
-
-        // const inputEl = useRef(null);
-
-        console.log(this.state.dataBar);
-
-        // const dataProgress = <Progress style={dataStyles} percent={this.state.dataBar} indicating/>;
-
-        
-        
-
-        // const popProgress = <Progress style={popStyles} percent={this.state.popBar} indicating/>;
 
         const introMessage = "The real cost of living in the 21st century cannot be measured in money alone. Data has been called “the new oil”. It’s a valuable asset. The entire online economic eco-system is powered by data. Yet throughout each day we give our data away. Most online games want to collect your data. We want you to think about the ways in which you give it away.";
-
+        
+        const nextMessage = "It’s an average day… <br/> What choices will you make? <br/> You can use digital technology and trade your data to save time and money. Or, you can guard your data and maintain privacy, but it may come at the cost of convenience and social connections. You get to decide…<br/>And we’ll show you the impact of your choices.";
         const questionMessage = "How do you wake up???";
         
-        // const intro = <Box style={introStyles}> {introMessage} </Box>; 
-        // const continueButton = <Button style={buttonStyles}>CONTINUE</Button>;
-
-       
-         
-        // const phoneChoice = <Button onClick={() => {
-        //                                 this.state.dataBar = this.state.dataBar - 10;
-        //                                 // this.render();
-        //                                 // alert('CLICKED PHONE' + this.state.dataBar);
-        //                             }} style={phoneStyles}>Smartphone Alarm</Button>;
-
-        // const clockChoice =  <Button onClick={() => {
-        //         this.state.popBar = this.state.popBar - 10;
-        //         this.render();
-        //         // alert('CLICKED CLOCK: ' + this.state.dataProgress.style.width);
-        //     }} style={clockStyles}>Alarm <br/> Clock</Button>;                      
-
-        // const question = <Box style={questionStyles}> {questionMessage} </Box>;
-
-
-        
-        
-        // this.state.children.push(dataProgress);
-        // this.state.children.push(question);
-        // this.state.children.push(phoneChoice);
-        // this.state.children.push(clockChoice);
-        // this.state.children.push(popProgress);
-
-        // paperStyles.filter = 'blur(0px)';
-        // ======================================================== //
-        // this.state.children.push(intro);
-        // this.state.children.push(continueButton);
-
-        
-
-        // for (var i = 0; i < this.state.numChildren; i += 1) {
-        //   children.push(<ChildComponent key={i} number={i} />);
-        // };
+        const choiceMessage = "You chose";
 
         return(
 
@@ -87,52 +83,71 @@ import reactDom from 'react-dom';
                 <Paper id='paperStyles'></Paper>
 
                 <div>
-                    <Progress id='dataStyles' percent={this.state.dataBar} indicating/>
+                    <Progress size='large' id='dataStyles' percent={this.state.dataPercent} indicating/>
                     <Box id='questionStyles'> {questionMessage} </Box>
-                    <Button onClick={() => {
-                                        this.state.dataBar = this.state.dataBar - 10;
-                                        // this.render();
-                                        alert('CLICKED PHONE' + this.state.dataBar);
-                                    }} id='phoneStyles'>Smartphone Alarm</Button>
+                    <Button onClick={this.dataDecrement} id='phoneStyles'>Smartphone Alarm</Button>
 
-                    <Button onClick={() => {
-                                        this.state.popBar = this.state.popBar - 10;
-                                        // this.render();
-                                        alert('CLICKED CLOCK: ' + this.state.dataProgress.style.width);
-                                    }} id='clockStyles'>Alarm <br/> Clock</Button>
+                    <Button onClick={this.popDecrement} id='clockStyles'>Alarm <br/> Clock</Button>
 
-                    <Progress id='popStyles' percent={this.state.popBar} indicating/>         
+                    <Box id='choiceStyles'> {choiceMessage} </Box>   
+
+                    <Box id='choiceCardStyles'></Box>   
 
                     <Box id='introStyles'> {introMessage} </Box>
                     <Button onClick={() => {
+                        document.getElementById('introStyles').innerHTML = nextMessage;
+                        document.getElementById('introStyles').style.backgroundColor = "white";
+                        document.getElementById('introStyles').style.color = "#536872";
+                        document.getElementById('startButtonStyles').style.display = 'block';
+                        document.getElementById('backButtonStyles').style.display = 'block';
+                    }}
+                    id='continueButtonStyles'>CONTINUE</Button>
+
+                    <Button onClick={() => {
                         document.getElementById('introStyles').style.display = 'none';
-                        document.getElementById('buttonStyles').style.display = 'none';
+                        document.getElementById('startButtonStyles').style.display = 'none';
                         document.getElementById('dataStyles').style.display = 'block';
                         document.getElementById('popStyles').style.display = 'block';
+                        document.getElementById('phoneStyles').style.display = 'block';
+                        document.getElementById('clockStyles').style.display = 'block';
+                        document.getElementById('infoButtonStyles').style.display = 'flex';
+                        document.getElementById('paperStyles').style.filter = 'blur(0px)';
+                        document.getElementById('continueButtonStyles').style.display = 'none';
+                        document.getElementById('backButtonStyles').style.display = 'none';
                     }}
-                    id='buttonStyles'>CONTINUE</Button>
+                    id='startButtonStyles'>START</Button>
+
+                    <IconButton onClick={() => {
+                        document.getElementById('introStyles').innerHTML = introMessage;
+                        document.getElementById('introStyles').style.backgroundColor = "#536872";
+                        document.getElementById('introStyles').style.color = "white";
+                        document.getElementById('startButtonStyles').style.display = 'none';
+                        document.getElementById('backButtonStyles').style.display = 'none';
+                    }}
+                    id='backButtonStyles' size="large">
+                        <ArrowBackIosNewIcon fontSize="inherit" />
+                    </IconButton>
+
+                    <IconButton
+                        // onClick={handleClick({
+                        // vertical: 'top',
+                        // horizontal: 'center',
+                        // })}
+                    id='infoButtonStyles' size="large">
+                        <InfoIcon fontSize="inherit"/>
+                    </IconButton>
+
+                    <Button onClick={() => {
+                        // document.getElementById('introStyles').innerHTML = nextMessage;
+                        // document.getElementById('introStyles').style.backgroundColor = "white";
+                        // document.getElementById('introStyles').style.color = "#536872";
+                        // document.getElementById('startButtonStyles').style.display = 'block';
+                        // document.getElementById('backButtonStyles').style.display = 'block';
+                    }}
+                    id='nextButtonStyles'>NEXT</Button>
+
+                    <Progress size='large' id='popStyles' percent={this.state.popPercent} indicating/> 
                 </div>
-
-                {/* <Paper style={paperStyles}> */}
-
-                    
-                
-                    {/* <Progress style={dataStyles} percent={100} indicating/>
-
-
-                    <Box style={phoneStyles}>
-                        Use your smartphone alarm
-                        <Button style={buttonStyles}>PHONE</Button>
-                    </Box>
-
-                    <Box style={clockStyles}>
-                        Use your old-school alarm clock
-                        <Button style={buttonStyles}>CLOCK</Button>
-                    </Box> 
-
-                    <Progress style={popStyles} percent={100} indicating/>  */}
-
-                {/* </Paper> */}
             </div>
         );
     }

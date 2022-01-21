@@ -7,11 +7,7 @@ import 'semantic-ui-css/semantic.min.css'
 function App() {
   return (
     <div>
-      <Background>
-        {/* <Box style={boxStyles}>
-          <Button>Save</Button>
-        </Box> */}
-      </Background>
+      <Background></Background>
     </div>
   );
 }

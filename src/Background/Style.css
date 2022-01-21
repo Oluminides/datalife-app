@@ -8,7 +8,7 @@
 
 #introStyles {
     position: absolute;
-    top: 10%;
+    top: 7.5%;
     left: 12.5%;
     width: 75%;
     height: 75%;
@@ -26,12 +26,12 @@
     line-height: 2
 }
 
-#buttonStyles {
+#continueButtonStyles {
     position: absolute;
     height: 10%;
     width: 15%;
-    top: 90%;
-    left: 85%;
+    top: 87.5%;
+    left: 42.5%;
     color: #536872;
     border: 2px solid #536872;
     border-radius: 10px;
@@ -41,10 +41,68 @@
     font-weight: bold;
 }
 
-#buttonStyles:hover {
+#continueButtonStyles:hover {
     background-color: #536872;
+    border: 2px solid white;
     color: white;
 }
+
+#startButtonStyles {
+    position: absolute;
+    height: 10%;
+    width: 15%;
+    top: 87.5%;
+    left: 42.5%;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: #536872;
+    font-family: Baskerville;
+    font-size: 25px;
+    font-weight: bold;
+    display: none;
+}
+
+#startButtonStyles:hover {
+    background-color: white;
+    border: 2px solid #536872;
+    color: #536872;
+}
+
+
+#backButtonStyles {
+    position: absolute;
+    height: 7.5%;
+    width: 5%;
+    top: 88.75%;
+    left: 12.5%;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: #536872;
+    font-family: Baskerville;
+    font-size: 25px;
+    font-weight: bold;
+    display: none;
+}
+
+#backButtonStyles:hover {
+    background-color: white;
+    border: 2px solid #536872;
+    color: #536872;
+}
+
+#infoButtonStyles {
+    position: absolute;
+    height: 4.5%;
+    width: 3%;
+    top: 1.5%;
+    left: 48.5%;
+    color: #536872;
+    align-items: center;
+    display: none;
+}
+
 
 #questionStyles {
     width: 50%;
@@ -59,7 +117,6 @@
     font-family: Baskerville;
     font-size: 35px;
     font-weight: bold;
-    /* typography: subtitle2; */
     letter-spacing: 6px;
     line-height: 1.5;
     flex-direction: column;
@@ -67,7 +124,7 @@
 }
 
 #dataStyles {
-    width: 33%;
+    width: 35%;
     /* height: 5%; */
     top: 0.5%;
     left: 0%;
@@ -76,7 +133,7 @@
 }
 
 #popStyles {
-    width: 33%;
+    width: 35%;
     /* height: 5%; */
     top: 0.5%;
     left: 67%;
@@ -99,10 +156,10 @@
     font-family: Baskerville;
     font-size: 35px;
     font-weight: bold;
-    /* typography: subtitle2; */
     text-align: center;
     letter-spacing: 6px;
-    line-height: 1.5
+    line-height: 1.5;
+    display: none;
 }
 
 #phoneStyles {
@@ -119,7 +176,76 @@
     font-family: Baskerville;
     font-size: 35px;
     font-weight: bold;
-    /* typography: subtitle2; */
     letter-spacing: 6px;
-    line-height: 1.5
+    line-height: 1.5;
+    display: none;
 }
+
+#choiceStyles {
+    width: 35%;
+    top: 10%;
+    left: 32.5%;
+    height: 8%;
+    position: absolute;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    color: #536872;
+    font-family: Baskerville;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    line-height: 1.5;
+    flex-direction: column;
+    display: none;
+}
+
+#choiceCardStyles {
+    width: 25%;
+    height: 30%;
+    top: 35%;
+    left: 37.5%;
+    border: 1px solid white;
+    position: fixed;
+    border-radius: 10px;
+    background-color: #536872;
+    text-align: center;
+    color: white;
+    font-family: Baskerville;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    line-height: 1.5;
+    display: none;
+}
+
+#nextButtonStyles {
+    position: absolute;
+    height: 10%;
+    width: 15%;
+    top: 87.5%;
+    left: 42.5%;
+    color: #536872;
+    border: 2px solid #536872;
+    border-radius: 10px;
+    background-color: white;
+    font-family: Baskerville;
+    font-size: 25px;
+    font-weight: bold;
+    display: none;
+}
+
+#nextButtonStyles:hover {
+    background-color: #536872;
+    border: 2px solid white;
+    color: white;
+}
+
+#imagePaperStyles {
+    min-height: 20vh;
+    /* background-image: url(../img/bedroom_background.png); */
+    /* background-repeat: no-repeat; /* Do not repeat the image */
+    /* background-size: cover; */ 
+}
+
