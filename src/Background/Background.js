@@ -27,18 +27,22 @@ import InfoIcon from '@mui/icons-material/Info';
     }
 
     dataDecrement = () => {
+
         this.setState((prevState) => ({
             dataPercent: prevState.dataPercent >= 0 ? prevState.dataPercent - 10 : 0,
             popPercent: prevState.popPercent >= 0 ? prevState.popPercent - 5 : 0,
         }));
 
-        document.getElementById('phoneStyles').style.display = 'none';
-        document.getElementById('clockStyles').style.display = 'none';
-        document.getElementById('questionStyles').style.display = 'none';
-        document.getElementById('choiceStyles').style.display = 'block';
-        document.getElementById('choiceCardStyles').style.display = 'block';
-        document.getElementById('choiceCardStyles').innerHTML = document.getElementById('phoneStyles').innerHTML;
-        document.getElementById('nextButtonStyles').style.display = 'block';
+        // document.getElementById('phoneStyles').style.display = 'none';
+        // document.getElementById('clockStyles').style.display = 'none';
+        // document.getElementById('questionStyles').style.display = 'none';
+        // document.getElementById('choiceStyles').style.display = 'block';
+        // document.getElementById('choiceCardStyles').style.display = 'block';
+        // document.getElementById('choiceCardStyles').innerHTML = document.getElementById('phoneStyles').innerHTML;
+        // document.getElementById('nextButtonStyles').style.display = 'block';
+
+        this.labelColor('dataLabelStyles', (this.state.dataPercent >= 0 ? this.state.dataPercent - 10 : 0));
+        this.labelColor('popLabelStyles', (this.state.popPercent >= 0 ? this.state.popPercent - 5 : 0));
     }
 
     popDecrement = () => {
@@ -47,14 +51,48 @@ import InfoIcon from '@mui/icons-material/Info';
             dataPercent: prevState.dataPercent >= 0 ? prevState.dataPercent - 5 : 0
         }));
         
-        document.getElementById('phoneStyles').style.display = 'none';
-        document.getElementById('clockStyles').style.display = 'none';
-        document.getElementById('questionStyles').style.display = 'none';
-        document.getElementById('choiceStyles').style.display = 'block';
-        document.getElementById('choiceCardStyles').style.display = 'block';
-        document.getElementById('choiceCardStyles').innerHTML = document.getElementById('clockStyles').innerHTML;
-        document.getElementById('nextButtonStyles').style.display = 'block';
+        // document.getElementById('phoneStyles').style.display = 'none';
+        // document.getElementById('clockStyles').style.display = 'none';
+        // document.getElementById('questionStyles').style.display = 'none';
+        // document.getElementById('choiceStyles').style.display = 'block';
+        // document.getElementById('choiceCardStyles').style.display = 'block';
+        // document.getElementById('choiceCardStyles').innerHTML = document.getElementById('clockStyles').innerHTML;
+        // document.getElementById('nextButtonStyles').style.display = 'block';
+
+        this.labelColor('popLabelStyles', (this.state.popPercent >= 0 ? this.state.popPercent - 10 : 0));
+        this.labelColor('dataLabelStyles', (this.state.dataPercent >= 0 ? this.state.dataPercent - 5 : 0));
+
     }
+
+    labelColor(label, percent)
+    {
+        if(percent >= 90)
+        {
+            document.getElementById(label).style.backgroundColor = '#66da81';
+        }
+        else if(percent >= 70 && percent < 89)
+        {
+            document.getElementById(label).style.backgroundColor = '#b4d95c';
+        }
+        else if(percent >= 60 && percent < 69)
+        {
+            document.getElementById(label).style.backgroundColor = '#ddc928';
+        }
+        else if(percent >= 40 && percent < 59)
+        {
+            document.getElementById(label).style.backgroundColor = '#e6bb48';
+        }
+        else if(percent >= 30 && percent < 39)
+        {
+            document.getElementById(label).style.backgroundColor = '#efbc72';
+        }
+        else if(percent < 30)
+        {
+            document.getElementById(label).style.backgroundColor = '#d95c5c';
+        }
+    }
+
+
     clickContinue()
     {
         document.getElementById('phoneStyles').style.display = 'none';
@@ -83,14 +121,15 @@ import InfoIcon from '@mui/icons-material/Info';
                 <Paper id='paperStyles'></Paper>
 
                 <div>
-                    <Progress size='large' id='dataStyles' percent={this.state.dataPercent} indicating/>
-                    <Box id='questionStyles'> {questionMessage} </Box>
-                    <Button onClick={this.dataDecrement} id='phoneStyles'>Smartphone Alarm</Button>
+                    <Progress size='large' id='dataStyles' percent={this.state.dataPercent} indicating></Progress>
+                    <Box id='dataLabelStyles'>DATA</Box>
 
+                    <Box id='questionStyles'> {questionMessage} </Box>
+
+                    <Button onClick={this.dataDecrement} id='phoneStyles'>Smartphone Alarm</Button>
                     <Button onClick={this.popDecrement} id='clockStyles'>Alarm <br/> Clock</Button>
 
                     <Box id='choiceStyles'> {choiceMessage} </Box>   
-
                     <Box id='choiceCardStyles'></Box>   
 
                     <Box id='introStyles'> {introMessage} </Box>
@@ -107,7 +146,9 @@ import InfoIcon from '@mui/icons-material/Info';
                         document.getElementById('introStyles').style.display = 'none';
                         document.getElementById('startButtonStyles').style.display = 'none';
                         document.getElementById('dataStyles').style.display = 'block';
+                        document.getElementById('dataLabelStyles').style.display = 'block';
                         document.getElementById('popStyles').style.display = 'block';
+                        document.getElementById('popLabelStyles').style.display = 'block';
                         document.getElementById('phoneStyles').style.display = 'block';
                         document.getElementById('clockStyles').style.display = 'block';
                         document.getElementById('infoButtonStyles').style.display = 'flex';
@@ -146,7 +187,8 @@ import InfoIcon from '@mui/icons-material/Info';
                     }}
                     id='nextButtonStyles'>NEXT</Button>
 
-                    <Progress size='large' id='popStyles' percent={this.state.popPercent} indicating/> 
+                    <Box id='popLabelStyles'>POPULARITY</Box>
+                    <Progress size='large' id='popStyles' percent={this.state.popPercent} indicating></Progress> 
                 </div>
             </div>
         );
