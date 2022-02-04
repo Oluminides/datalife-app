@@ -3,7 +3,7 @@
     background-image: url(../img/bedroom_background.png);
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
-    filter: blur(6px);
+    filter: blur(6px); 
 }
 
 #introStyles {
@@ -12,18 +12,18 @@
     left: 12.5%;
     width: 75%;
     height: 75%;
-    border: 1px solid white;
+    border: 5px outset white;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     color: white;
     background-color: #536872;
     font-family: Baskerville;
-    font-size: 35px;
+    font-size: 34px;
     font-weight: bold;
     text-align: center;
     letter-spacing: 6px;
-    line-height: 2
+    line-height: 2;
 }
 
 #continueButtonStyles {
@@ -33,7 +33,7 @@
     top: 87.5%;
     left: 42.5%;
     color: #536872;
-    border: 2px solid #536872;
+    border: 5px outset #536872;
     border-radius: 10px;
     background-color: white;
     font-family: Baskerville;
@@ -43,7 +43,7 @@
 
 #continueButtonStyles:hover {
     background-color: #536872;
-    border: 2px solid white;
+    border: 5px outset white;
     color: white;
 }
 
@@ -54,7 +54,7 @@
     top: 87.5%;
     left: 42.5%;
     color: white;
-    border: 2px solid white;
+    border: 5px outset white;
     border-radius: 10px;
     background-color: #536872;
     font-family: Baskerville;
@@ -65,7 +65,7 @@
 
 #startButtonStyles:hover {
     background-color: white;
-    border: 2px solid #536872;
+    border: 5px outset #536872;
     color: #536872;
 }
 
@@ -73,11 +73,11 @@
 #backButtonStyles {
     position: absolute;
     height: 7.5%;
-    width: 5%;
+    width: 4.5%;
     top: 88.75%;
     left: 12.5%;
     color: white;
-    border: 2px solid white;
+    border: 5px outset white;
     border-radius: 10px;
     background-color: #536872;
     font-family: Baskerville;
@@ -88,14 +88,32 @@
 
 #backButtonStyles:hover {
     background-color: white;
-    border: 2px solid #536872;
+    border: 5px outset #536872;
     color: #536872;
+}
+
+#volumeButtonStyles {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    top: 90%;
+    left: 1%;
+    color: white;
+    border: 5px outset white;
+    border-radius: 10px;
+    background-color: #536872;
+    font-family: Baskerville;
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    display: none;
 }
 
 #infoButtonStyles {
     position: absolute;
-    height: 4.5%;
-    width: 3%;
+    height: 35px;
+    width: 35px;     
     top: 1.5%;
     left: 48.5%;
     color: #536872;
@@ -103,14 +121,59 @@
     display: none;
 }
 
+#infoCardStyles {
+    position: absolute;
+    top: 7.5%;
+    left: 25%;
+    width: 50%;
+    height: 75%;
+    border: 5px outset white;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    color: #536872;
+    background-color: white;
+    font-family: Baskerville;
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 6px;
+    line-height: 2
+}
+
+#infoCloseStyles {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 7.5%;
+    left: 18.75%;
+    color: white;
+    border: 5px outset white;
+    border-radius: 10px;
+    background-color: #536872;
+    font-family: Baskerville;
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    display: none;
+}
+
+#infoCloseStyles:hover {
+    background-color: white;
+    border: 5px outset #536872;
+    color: #536872;
+}
+
 
 #questionStyles {
-    width: 50%;
+    width: 750px;
     top: 10%;
     left: 25%;
-    height: 8%;
+    height: 120px;
     position: absolute;
     border-radius: 10px;
+    border: 5px outset white;
     background-color: white;
     text-align: center;
     color: #536872;
@@ -118,8 +181,11 @@
     font-size: 35px;
     font-weight: bold;
     letter-spacing: 6px;
-    line-height: 1.7;
+    line-height: 120px;
     flex-direction: column;
+    margin: auto;
+    vertical-align: middle;
+    
 
 }
 
@@ -180,7 +246,7 @@
     color: white;
 }
 
-#clockStyles {
+#secondStyles {
     width: 25%;
     height: 30%;
     top: 35%;
@@ -199,7 +265,7 @@
     display: none;
 }
 
-#phoneStyles {
+#firstStyles {
     width: 25%;
     height: 30%;
     top: 35%;
@@ -219,44 +285,45 @@
 }
 
 #choiceStyles {
-    width: 35%;
-    top: 10%;
-    left: 32.5%;
-    height: 8%;
-    position: absolute;
-    border-radius: 10px;
-    background-color: white;
-    text-align: center;
-    color: #536872;
-    font-family: Baskerville;
-    font-size: 35px;
-    font-weight: bold;
-    letter-spacing: 6px;
-    line-height: 1.7;
-    flex-direction: column;
-    display: none;
+    width: 35%;                                                                 
+    top: 10%;                                   
+    left: 32.5%;                                    
+    height: 8%;                                 
+    position: absolute;    
+    border: 5px outset white;                             
+    border-radius: 10px;                                    
+    background-color: white;                                    
+    text-align: center;                                 
+    color: #536872;                                 
+    font-family: Baskerville;                                   
+    font-size: 35px;                                    
+    font-weight: bold;                                  
+    letter-spacing: 6px;                                    
+    line-height: 1.65;                                   
+    flex-direction: column;                                 
+    display: none;                                  
 }
 
 #choiceCardStyles {
-    width: 25%;
-    height: 30%;
-    top: 35%;
-    left: 37.5%;
-    border: 5px outset white;
-    position: absolute;
-    border-radius: 10px;
-    background-color: #536872;
-    text-align: center;
-    color: white;
-    font-family: Baskerville;
-    flex-direction: column;
+    width: 25%;                                                                  
+    height: 30%;                             
+    top: 35%;                             
+    left: 37.5%;                             
+    border: 5px outset white;                             
+    position: absolute;                             
+    border-radius: 10px;                             
+    background-color: #536872;                             
+    text-align: center;  
     align-items: center;
-    vertical-align: middle;
-    font-size: 35px;
-    font-weight: bold;
-    letter-spacing: 6px;
-    line-height: 1.5;
-    display: none;
+    flex-direction: column;  
+    /* vertical-align: middle;                          */
+    color: white;                             
+    font-family: Baskerville;                             
+    font-size: 35px;                             
+    font-weight: bold;                             
+    letter-spacing: 6px;                             
+    /* line-height: 4.0;                              */
+    display: none;                             
 }
 
 #nextButtonStyles {
@@ -266,7 +333,7 @@
     top: 87.5%;
     left: 42.5%;
     color: #536872;
-    border: 2px solid #536872;
+    border: 5px outset #536872;
     border-radius: 10px;
     background-color: white;
     font-family: Baskerville;
@@ -277,7 +344,7 @@
 
 #nextButtonStyles:hover {
     background-color: #536872;
-    border: 2px solid white;
+    border: 5px outset white;
     color: white;
 }
 
