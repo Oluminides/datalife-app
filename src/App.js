@@ -1,5 +1,5 @@
 // import './App.css';
-import Background from './Background/Background';
+import Datalife from './Datalife/Datalife';
 import 'semantic-ui-css/semantic.min.css'
 
 
@@ -7,7 +7,7 @@ import 'semantic-ui-css/semantic.min.css'
 function App() {
   return (
     <div>
-      <Background></Background>
+      <Datalife></Datalife>
     </div>
   );
 }
